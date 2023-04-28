@@ -43,15 +43,28 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let i = 0;
-    while (i < 5) {
-        //variables for the rps (one user input and another computer generated)
-        let playerSelection = prompt("Please enter rock, paper, or scissors to play."); //changing all to lower case so it's case insensitive;
-        //calling the function to collect the value for the cpu generated value
-        const computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-        i++;
-    }
-    //*****fix this part of the code so that it runs 5 times****
-}
+const rockJs = document.body.querySelector("#rock");
+rockJs.addEventListener("input", playRound(, getComputerChoice()));
+const scissorsJs = document.body.querySelector("#scissors");
+scissorsJs.addEventListener("input", playRound(, getComputerChoice()));
+const paperJs = document.body.querySelector("#paper");
+paperJs.addEventListener("input", playRound(e.value, getComputerChoice()));
+
+// buttons.forEach((button) => {
+//     const computerSelection = getComputerChoice();
+//     const playerSelection = button.value;
+//     button.addEventListener('click', playRound(playerSelection,computerSelection));
+// });
+
+// function game() {
+//     let i = 0;
+//     // while (i < 5) {
+//     //     //variables for the rps (one user input and another computer generated)
+//     //     let playerSelection = prompt("Please enter rock, paper, or scissors to play."); //changing all to lower case so it's case insensitive;
+//     //     //calling the function to collect the value for the cpu generated value
+//     //     const computerSelection = getComputerChoice();
+//     //     playRound(playerSelection, computerSelection);
+//     //     i++;
+//     // }
+//     //*****fix this part of the code so that it runs 5 times****
+// }
