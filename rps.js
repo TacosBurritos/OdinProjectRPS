@@ -15,7 +15,6 @@ function getComputerChoice() {
 }
 //rules for single round of Rock paper scissors
 function playRound(playerSelection, computerSelection) {
-
     //making sure the player input is valid
     //** for some reason the code gets stuck here, check logic**/
     /*if (playerSelection !== 'rock' || playerSelection !== 'scissors' || playerSelection !== 'paper') {
@@ -43,18 +42,22 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const rockJs = document.body.querySelector("#rock");
-rockJs.addEventListener("input", playRound(, getComputerChoice()));
-const scissorsJs = document.body.querySelector("#scissors");
-scissorsJs.addEventListener("input", playRound(, getComputerChoice()));
-const paperJs = document.body.querySelector("#paper");
-paperJs.addEventListener("input", playRound(e.value, getComputerChoice()));
+// const rockJs = document.body.querySelector("#rock");
+// rockJs.addEventListener("click", playRound(rockJs.value));
+// const scissorsJs = document.body.querySelector("#scissors");
+// scissorsJs.addEventListener("click", playRound(scissorsJs.value));
+// const paperJs = document.body.querySelector("#paper");
+// paperJs.addEventListener("click", playRound(paperJs.value));
 
-// buttons.forEach((button) => {
-//     const computerSelection = getComputerChoice();
-//     const playerSelection = button.value;
-//     button.addEventListener('click', playRound(playerSelection,computerSelection));
-// });
+const buttons = document.body.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        const playerSelection = button.innerText.toLowerCase();
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection)
+    })
+}
+);
 
 // function game() {
 //     let i = 0;
